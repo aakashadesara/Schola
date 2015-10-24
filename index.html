@@ -4,7 +4,10 @@
   <link href="css/animate.css" rel="stylesheet" type="text/css">
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <script type="text/javascript" src="js/jquery.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
   <script type="text/javascript" src="js/data.js"></script>
+
   <script type="text/javascript" src="js/script.js"></script>
 </head>
 <body>
@@ -14,11 +17,177 @@
         <h1> S C H O L A </h1>
         <h3 style="color: gray;"> College counseling at your fingertips </h3>
         <br>
-        <a id="initButton" class="btn btn-primary btn-lg ">Plan your future</a>
+        <a id="initButton" class="btn btn-primary btn-lg ">Tell us about yourself</a>
       </div>
     </div> 
+
+    <!-- First name, Last name, grade -->
+    <div id="infoSection1">
+      <div style="text-align: center; padding: 5%;" >
+        <form class="form-horizontal">
+  <fieldset>
+    <legend>Basic Information</legend>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-3 control-label">First Name</label>
+      <div class="col-lg-6">
+        <input type="text" class="form-control" id="firstNameHolder" placeholder="First Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-3 control-label">Last Name</label>
+      <div class="col-lg-6">
+        <input type="text" class="form-control" id="lastNameHolder" placeholder="Last Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-3 control-label">High School Name</label>
+      <div class="col-lg-6">
+        <input type="text" class="form-control" id="highSchoolHolder" placeholder="High School Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-3 control-label">Graduation year</label>
+      <div class="col-lg-6">
+        <input type="text" class="form-control" id="gradYearHolder" placeholder="Graduation year">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-3 control-label">Interested major</label>
+      <div class="col-lg-6">
+        <input type="text" class="form-control" id="majorHolder" placeholder="Interested major">
+      </div>
+    </div>
+    
+    <a id="initButton2" class="btn btn-primary btn-lg ">How was your school performance?  </a>
+    </form>
+  </div>
+    </div>
    
+   <!-- High School, GPA, SAT Score, ACT Score -->
+    <div id="infoSection2">
+        <div style="text-align: center; padding: 5%;" >
+               <form class="form-horizontal">
+  <fieldset>
+    <legend>Academic Information</legend>
+          <div class="form-group">
+        <label for="inputEmail" class="col-lg-3 control-label">GPA (out of 4.0)</label>
+        <div class="col-lg-3">
+          <input type="text" class="form-control" id="gpaHolder" placeholder="GPA ">
+        </div>
+
+      </div>
+      <div class="form-group">
+        <label for="inputEmail" class="col-lg-3 control-label">SAT Score (Best Attempt)</label>
+        <div class="col-lg-2">
+          <input type="text" class="form-control" id="satMathHolder" placeholder="Math">
+        </div>
+        <div class="col-lg-2">
+          <input type="text" class="form-control" id="satWritingHolder" placeholder="Writing">
+        </div>
+        <div class="col-lg-2">
+          <input type="text" class="form-control" id="satCRHolder" placeholder="Critical Reading">
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="inputEmail" class="col-lg-3 control-label">ACT Score (Best Attempt)</label>
+          <div class="col-lg-1">
+            <input type="text" class="form-control" id="actMathHolder" placeholder="Math">
+          </div>
+          <div class="col-lg-1">
+            <input type="text" class="form-control" id="actEnglishHolder" placeholder="English">
+          </div>
+          <div class="col-lg-1">
+            <input type="text" class="form-control" id="actReadingHolder" placeholder="Reading">
+          </div>
+          <div class="col-lg-1">
+            <input type="text" class="form-control" id="actScienceHolder" placeholder="Science">
+          </div>
+        </div>
+      </fieldset>
+    </form>
+    <div class="form-group">
+        <label for="inputEmail" class="col-lg-3 control-label">SAT Subject Tests</label>
+        <div id="subjectTestCheckHolder" class="col-md-7">
+
+
+        </div>
+
+      </div>
+        <a id="initButton3" class="btn btn-primary btn-lg ">Tell us about your extracurriculars!  </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Extra curriculars -->
+    <div id="infoSection3">
+      <div style="text-align: center; padding: 5%;" >
+        <form class="form-horizontal">
+        <fieldset>
+        <legend>Extracurricular Information</legend>
+        
+        <div id="ecHolders">
+
+        </div>
+        <a id="initButton4" class="btn btn-primary btn-lg ">Where would you like to go for college?  </a>
+      </div>
+    </div>
+
+    <div id="infoSection4" style="text-align: center;">
+      <div style="text-align: center; padding: 5%;" >
+        <div class="col-md-6 col-md-offset-3">
+        <div class="list-group">
+        <a href="#" class="list-group-item active col-md-12">
+          College List
+        </a>
+        <a href="#" class="list-group-item"> 
+        </a>
+        <div id="collegeNameHolder"></div>
+
+         </div>
+
+         <br> <br> <br>
+        <form class="form-horizontal">
+        <div class="ui-widget">
+        <input id="tags" class="col-md-8">
+        
+         <a id="addCollegeButton" class="btn btn-primary col-md-4">Add to list </a>
+      </div>
+      <br><br><br>
+        <a id="generateButton" class="btn btn-primary btn-lg ">Generate timeline.  </a>
+      </div>
+    </div>
+        </div>
+          <br>
+     
     
 </body>
+
+<style>
+  .ui-autocomplete {
+    max-height: 100px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    background-color: white;
+    width: 100px;
+    list-style-type: none; 
+    font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+    font-size: 120%;
+  }
+
+  .ui-menu-item:hover {
+    background-color: red;
+  }
+  /* IE 6 doesn't support max-height
+   * we use height instead, but this forces the menu to always be this tall
+   */
+  * html .ui-autocomplete {
+    height: 100px;
+  }
+  </style>
+
 </html>
 
