@@ -8859,6 +8859,27 @@ var majorList = [["Agriculture Operations, and Related Sciences", ["farm", "fiel
 ["Transportation and Materials Moving", ["car", "truck", "automobile", "plane", "robotics", "ground", "air", "marine", "railroad", "railway", "flight", "aviation"]],
 ["Visual and Performing Arts", ["dance", "singing", "dancing", "sing", "stage", "draw", "paint", "art", "music", "studio", "film", "video", "craft", "design", "entertainment", "graphic", "illustration", "commercial", "advertising"]]];
 
-var subjectTestList = ["Literature", "Biology E", "Biology M", "Chemistry", "Physics", "U.S. History", "World History", "Mathematics 1", "Mathematics 2", "French", "German", "Spanish", "Modern Hebrew",
-	"Italian", "Latin", "French (with L.)", "German (with L.)", "Spanish (with L.)", "Italian (with L.)", "Latin (with L.)", "Chinese (with L.)", "Japanese (with L.)", "Korean (with L.)"];
+var subjectTestList = [ ["Literature", .988], 
+						["Biology E", .988], 
+						["Biology M", .986], 
+						["Chemistry", .984], 
+						["Physics", .984], 
+						["U.S. History", .986], 
+						["World History", .988], 
+						["Mathematics 1", .988], 
+						["Mathematics 2", .981], 
+						["French", .987], 
+						["German", .987], 
+						["Spanish", .986], 
+						["Modern Hebrew", .989],
+						["Italian", .979], 
+						["Latin", .989], 
+						["French (with L.)", .984], 
+						["German (with L.)", .987], 
+						["Spanish (with L.)", .984], 
+						["Italian (with L.)", .984], 
+						["Latin (with L.)", .989], 
+						["Chinese (with L.)", .984], 
+						["Japanese (with L.)", .981], 
+						["Korean (with L.)", .931]];
 

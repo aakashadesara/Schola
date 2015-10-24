@@ -6,11 +6,126 @@
   <script type="text/javascript" src="js/jquery.js"></script>
   <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
+  <SCRIPT TYPE="text/javascript" src="js/EasePack.min.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript" src="js/Three.js"></SCRIPT>
+  <SCRIPT TYPE="text/javascript" src="js/TweenLite.min.js"></SCRIPT>
+
   <script type="text/javascript" src="js/data.js"></script>
 
   <script type="text/javascript" src="js/script.js"></script>
 </head>
+
+
+<style>
+div {
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+#informationDiv {
+  background-color: rgba(255,255,255,0.3);
+}
+.timeline {
+    width: 400px;
+    
+}
+.timeline .timeline-item {
+    width: 100%;
+}
+.timeline .timeline-item .info, .timeline .timeline-item .year {
+    color: #eee;
+    float:left;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.timeline .timeline-item.close .info, .timeline .timeline-item.close .year {
+    color: #ccc;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.timeline .timeline-item .year {
+    font-size: 15px;
+    font-weight: bold;
+    width: 35%;
+}
+
+.timeline .timeline-item .info {
+    width: 100%;
+    width: 90%;
+    margin-left: 139px;
+    padding: 0 0 40px 35px;
+    border-left: 4px solid #aaa;
+    font-size: 14px;
+    line-height: 20px;
+}
+.timeline .timeline-item .marker {
+    background-color: #fff;
+    border: 4px solid #aaa;
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+    float: right;
+    margin-right: -14px;
+    z-index: 2000;
+    position: relative;
+}
+.timeline .timeline-item.active .info, .timeline .timeline-item:hover .info {
+    color: #444;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+}
+.timeline .timeline-item.active .year, .timeline .timeline-item:hover .year {
+    color: #c83d34;
+}
+.timeline .timeline-item .marker .dot {
+    background-color: white;
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+    border: 4px solid white;
+    height: 12px;
+    width: 12px;
+    border-radius: 100px;
+    float: right;
+    z-index: 2000;
+}
+
+.timeline .badge {
+    background-color: #5F955F;
+    border: 1px solid white;
+    height: 12px;
+    width: 12px;
+    border-radius: 100px;
+    margin-right: 2px;
+    float: left;
+    z-index: 3;
+    opacity: 0.8;
+}
+
+
+
+.timeline .timeline-item.active .marker .dot, .timeline .timeline-item:hover .marker .dot {
+    -webkit-transition: all 1s ease;
+    -moz-transition: all 1s ease;
+    transition: all 1s ease;
+    background-color: #c83d34;
+    box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.center {
+    margin: auto;
+}
+
+</style>
+
+
 <body>
+  <div id="large-header" style="height: 100%; width: 100%; position: fixed; z-index: -10;">
+        <canvas id="demo-canvas" style="height: 100%; width: 100%; background-color: rgba(255,255,255,0.3); position: absolute;"></canvas>
+      </div>
+
     <div id="1stSection">
       <div style="text-align: center; padding: 5%;" >
         <img src="assets/icon.png" style="width: 300px;">
@@ -28,31 +143,31 @@
   <fieldset>
     <legend>Basic Information</legend>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-3 control-label">First Name</label>
+      <label class="col-lg-3 control-label">First Name</label>
       <div class="col-lg-6">
         <input type="text" class="form-control" id="firstNameHolder" placeholder="First Name">
       </div>
     </div>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-3 control-label">Last Name</label>
+      <label class="col-lg-3 control-label">Last Name</label>
       <div class="col-lg-6">
         <input type="text" class="form-control" id="lastNameHolder" placeholder="Last Name">
       </div>
     </div>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-3 control-label">High School Name</label>
+      <label class="col-lg-3 control-label">High School Name</label>
       <div class="col-lg-6">
         <input type="text" class="form-control" id="highSchoolHolder" placeholder="High School Name">
       </div>
     </div>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-3 control-label">Graduation year</label>
+      <label class="col-lg-3 control-label">Graduation year</label>
       <div class="col-lg-6">
         <input type="text" class="form-control" id="gradYearHolder" placeholder="Graduation year">
       </div>
     </div>
     <div class="form-group">
-      <label for="inputEmail" class="col-lg-3 control-label">Interested major</label>
+      <label class="col-lg-3 control-label">Interested major</label>
       <div class="col-lg-6">
         <input type="text" class="form-control" id="majorHolder" placeholder="Interested major">
       </div>
@@ -70,14 +185,26 @@
   <fieldset>
     <legend>Academic Information</legend>
           <div class="form-group">
-        <label for="inputEmail" class="col-lg-3 control-label">GPA (out of 4.0)</label>
+        <label class="col-lg-3 control-label">Unweighted GPA (out of 4.0)</label>
         <div class="col-lg-3">
-          <input type="text" class="form-control" id="gpaHolder" placeholder="GPA ">
+          <input type="text" class="form-control" id="gpaHolder" placeholder="UW GPA ">
+        </div>
+        <br>
+        <div class="form-group">
+        <label class="col-lg-3 control-label">Weighted GPA (out of 5.0)</label>
+        <div class="col-lg-3">
+          <input type="text" class="form-control" id="WgpaHolder" placeholder="Weighted GPA ">
+        </div>
+        <br>
+        <div class="form-group">
+        <label class="col-lg-3 control-label"># of Classes</label>
+        <div class="col-lg-3">
+          <input type="text" class="form-control" id="totalClassesHolder" placeholder="# of Classes ">
         </div>
 
       </div>
       <div class="form-group">
-        <label for="inputEmail" class="col-lg-3 control-label">SAT Score (Best Attempt)</label>
+        <label class="col-lg-3 control-label">SAT Score (Best Attempt)</label>
         <div class="col-lg-2">
           <input type="text" class="form-control" id="satMathHolder" placeholder="Math">
         </div>
@@ -89,7 +216,7 @@
         </div>
       </div>
       <div class="form-group">
-          <label for="inputEmail" class="col-lg-3 control-label">ACT Score (Best Attempt)</label>
+          <label class="col-lg-3 control-label">ACT Score (Best Attempt)</label>
           <div class="col-lg-1">
             <input type="text" class="form-control" id="actMathHolder" placeholder="Math">
           </div>
@@ -106,7 +233,7 @@
       </fieldset>
     </form>
     <div class="form-group">
-        <label for="inputEmail" class="col-lg-3 control-label">SAT Subject Tests</label>
+        <label class="col-lg-3 control-label">SAT Subject Tests</label>
         <div id="subjectTestCheckHolder" class="col-md-7">
 
 
@@ -160,8 +287,260 @@
         </div>
           <br>
      
+     <div id="informationDiv" style="background-color: background-color: rgba(255,255,255,0.5); max-height: 100%; overflow-y: scroll;">
+      
+<div class="timeline" style="margin-left: 500px; margin-right:auto;">
+<h1>Your High School Timeline<h1>
+    <div class="timeline-item ">
+        <div class="year">Freshmanak kdasd askdjkals<span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:blue"></span>That song the artist formerly known as prince sang no longer applies.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">Sophomore<span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#00B8E6"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason: Rob Ford takes a good goddamn photo.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">Junior<span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#B80000"></span>That song the artist formerly known as prince sang no longer applies.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">Senior<span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#E66916"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#FFDB4D"></span>That song the artist formerly known as prince sang no longer applies.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#f56773 "></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
+    </div> <div class="timeline-item">
+        <div class="year">Senior<span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#E66916"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#FFDB4D"></span>That song the artist formerly known as prince sang no longer applies.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#f56773 "></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
+    </div> <div class="timeline-item">
+        <div class="year">Senior<span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#E66916"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#FFDB4D"></span>That song the artist formerly known as prince sang no longer applies.</div>
+    </div>
+    <div class="timeline-item">
+        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
+        </div>
+        <div class="info"><span class="badge" style="color:#f56773 "></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
+    </div>
+</div>
+
+     </div>
     
 </body>
+
+<script type="text/javascript">
+(function() {
+
+    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+
+    // Main
+    initHeader();
+    initAnimation();
+    addListeners();
+
+    function initHeader() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        target = {x: width/2, y: height/2};
+
+        largeHeader = document.getElementById('large-header');
+        largeHeader.style.height = height+'px';
+
+        canvas = document.getElementById('demo-canvas');
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext('2d');
+
+        // create points
+        points = [];
+        for(var x = 0; x < width; x = x + width/20) {
+            for(var y = 0; y < height; y = y + height/20) {
+                var px = x + Math.random()*width/20;
+                var py = y + Math.random()*height/20;
+                var p = {x: px, originX: px, y: py, originY: py };
+                points.push(p);
+            }
+        }
+
+        // for each point find the 5 closest points
+        for(var i = 0; i < points.length; i++) {
+            var closest = [];
+            var p1 = points[i];
+            for(var j = 0; j < points.length; j++) {
+                var p2 = points[j]
+                if(!(p1 == p2)) {
+                    var placed = false;
+                    for(var k = 0; k < 5; k++) {
+                        if(!placed) {
+                            if(closest[k] == undefined) {
+                                closest[k] = p2;
+                                placed = true;
+                            }
+                        }
+                    }
+
+                    for(var k = 0; k < 5; k++) {
+                        if(!placed) {
+                            if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                                closest[k] = p2;
+                                placed = true;
+                            }
+                        }
+                    }
+                }
+            }
+            p1.closest = closest;
+        }
+
+        // assign a circle to each point
+        for(var i in points) {
+            var c = new Circle(points[i], 2+Math.random()*2, 'rgba(0,0,0,0.5)');
+            points[i].circle = c;
+        }
+    }
+
+    // Event handling
+    function addListeners() {
+        if(!('ontouchstart' in window)) {
+            window.addEventListener('mousemove', mouseMove);
+        }
+        window.addEventListener('scroll', scrollCheck);
+        window.addEventListener('resize', resize);
+    }
+
+    function mouseMove(e) {
+        var posx = posy = 0;
+        if (e.pageX || e.pageY) {
+            posx = e.pageX;
+            posy = e.pageY;
+        }
+        else if (e.clientX || e.clientY)    {
+            posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+            posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+        target.x = posx;
+        target.y = posy;
+    }
+
+    function scrollCheck() {
+        if(document.body.scrollTop > height) animateHeader = false;
+        else animateHeader = true;
+    }
+
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        largeHeader.style.height = height+'px';
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    // animation
+    function initAnimation() {
+        animate();
+        for(var i in points) {
+            shiftPoint(points[i]);
+        }
+    }
+
+    function animate() {
+        if(animateHeader) {
+            ctx.clearRect(0,0,width,height);
+            for(var i in points) {
+                // detect points in range
+                if(Math.abs(getDistance(target, points[i])) < 12000) {
+                    points[i].active = 0.3;
+                    points[i].circle.active = 0.6;
+                } else if(Math.abs(getDistance(target, points[i])) < 80000) {
+                    points[i].active = 0.1;
+                    points[i].circle.active = 0.3;
+                } else if(Math.abs(getDistance(target, points[i])) < 100000) {
+                    points[i].active = 0.02;
+                    points[i].circle.active = 0.1;
+                } else {
+                    points[i].active = 0;
+                    points[i].circle.active = 0;
+                }
+
+                drawLines(points[i]);
+                points[i].circle.draw();
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    function shiftPoint(p) {
+        TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
+            y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
+            onComplete: function() {
+                shiftPoint(p);
+            }});
+    }
+
+    // Canvas manipulation
+    function drawLines(p) {
+        if(!p.active) return;
+        for(var i in p.closest) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p.closest[i].x, p.closest[i].y);
+            ctx.strokeStyle = 'rgba(230,50,50,'+ p.active+')';
+            ctx.stroke();
+        }
+    }
+
+    function Circle(pos,rad,color) {
+        var _this = this;
+
+        // constructor
+        (function() {
+            _this.pos = pos || null;
+            _this.radius = rad || null;
+            _this.color = color || null;
+        })();
+
+        this.draw = function() {
+            if(!_this.active) return;
+            ctx.beginPath();
+            ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'rgba(199,33,33,'+ _this.active+')';
+            ctx.fill();
+        };
+    }
+
+    // Util
+    function getDistance(p1, p2) {
+        return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+    }
+    
+})();</script>
 
 <style>
   .ui-autocomplete {
