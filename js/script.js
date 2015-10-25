@@ -2,7 +2,6 @@ var user;
 
 $(document).ready(function(){
 
-	
 	document.onkeydown = function() {
 		var audio = new Audio('assets/type.wav');
 		audio.play();
@@ -132,7 +131,7 @@ $(document).ready(function(){
 		var timelineACT = takeAgainACT(computeUserACT(user[9], user[10], user[11], user[12]), highestACTFromcCollege(user[26]));
 
 
-		alert(user[9] + " " + user[10] + " " + user[11] + " " + user[12] + " " + timelineACT + " " + highestACTFromcCollege(user[26]));
+		console.log(user[9] + " " + user[10] + " " + user[11] + " " + user[12] + " " + timelineACT + " " + highestACTFromcCollege(user[26]));
 
 		//$("#informationDiv").html("First Name: " + user[0] + "\n" + "GPA " + user[5] + "\nW GPA " + user[6] + "GPA Needed " + timelineGPA);
 
@@ -296,13 +295,13 @@ function generateTimeline(){
 	$("#getNameHolder").html(user[0] + " " + user[1]);
 
 	console.log(user);
-	//alert("Current year: " + calculateYear(user[3]));
+	//console.log("Current year: " + calculateYear(user[3]));
 	
 	var totalEC = 0;
 	for(var i = 13; i < 25; i++)
 		totalEC += extraCurricularCalculator(user[i]);
 	
-	alert(totalEC);
+	console.log(totalEC);
 
 	makeFreshman();
 	makeSophomore();
@@ -342,13 +341,16 @@ function makeFreshman(){
 	}
 	var str1 = gpaPrompts[randInt1][0] + nameOfHighestCollege + gpaPrompts[randInt1][1] + highestGPA + gpaPrompts[randInt1][2] + (Math.floor(100*gpaNeeded)/100) +  gpaPrompts[randInt1][3]; 
 	
+	$("#freshmanLine").html($("#freshmanLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-primary\">Life</span>" + freshmanPrompts[Math.floor(freshmanPrompts.length * Math.random())] + "</div>    </div>");
+
+
 	if(calculateYear(user[3]) <= 1) 
 		$("#freshmanLine").html($("#freshmanLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-danger\">Academics</span>" + str1 + "</div>    </div>");
 
 	$("#freshmanLine").html($("#freshmanLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-warning\">Extracurricular</span>" + ecStringGenerator(user[4]) + "</div>    </div>");
 
 	if(calculateYear(user[3]) > 3) {
-			$("#juniorLine").html($("#juniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"badge\" style=\"color:blue\"></span>" + nostalgiaQuotes[Math.floor(Math.random() * nostalgiaQuotes.length)] + "</div>    </div>");
+			$("#freshmanLine").html($("#freshmanLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"badge\" style=\"color:blue\"></span>" + nostalgiaQuotes[Math.floor(Math.random() * nostalgiaQuotes.length)] + "</div>    </div>");
 
 	}
 
@@ -371,8 +373,12 @@ function makeSophomore(){
 		$("#sophomoreLine").html($("#sophomoreLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-danger\">Academics</span>" + str1 + "</div>    </div>");
 	}
 
+	$("#sophomoreLine").html($("#sophomoreLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-primary\">Life</span>" + sophomorePrompts[Math.floor(sophomorePrompts.length * Math.random())] + "</div>    </div>");
+
+
+
 	if(calculateYear(user[3]) > 3) {
-			$("#juniorLine").html($("#juniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"badge\" style=\"color:blue\"></span>" + nostalgiaQuotes[Math.floor(Math.random() * nostalgiaQuotes.length)] + "</div>    </div>");
+			$("#sophomoreLine").html($("#sophomoreLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"badge\" style=\"color:blue\"></span>" + nostalgiaQuotes[Math.floor(Math.random() * nostalgiaQuotes.length)] + "</div>    </div>");
 
 	}
 
@@ -406,6 +412,9 @@ function makeJunior(){
 		$("#juniorLine").html($("#juniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-info\">Testing</span>" + str2 + "</div>    </div>");
 	}
 
+	$("#juniorLine").html($("#juniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-primary\">Life</span>" + juniorPrompts[Math.floor(juniorPrompts.length * Math.random())] + "</div>    </div>");
+
+
 	if(takeAgainACT(computeUserACT(user[9], user[10], user[11], user[12]), highestACTFromcCollege(user[26]))){
 		var randCollege = user[26][Math.floor(Math.random() * user[26].length)];
 		var randInt1 = Math.floor(Math.random() * ACTprompts.length);
@@ -426,6 +435,9 @@ function makeJunior(){
 
 function makeSenior(){
 
+	$("#seniorLine").html($("#seniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-success\">General</span>Next up on the list is college but too bad you gotta cook it up yourself. Start working on college applications (aka, signup for your CommonApp, UC App, UT App, etc etc) and start filling out those surveys. They take some time but they are about you so you'll be fine!</div>    </div>");
+
+
 	var nameOfHighestCollege = highestGPAFromCollegesName(user[26]);
 	var highestGPA = highestGPAFromColleges(user[26]);
 	var gpaNeeded = gpaNeededToMeet(highestGPAFromColleges(user[26]), user[27], calculateYear(user[3]), user[6]);
@@ -443,6 +455,8 @@ function makeSenior(){
 
 		$("#seniorLine").html($("#seniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-info\">Testing</span>" + str2 + "</div>    </div>");
 	}
+
+	$("#seniorLine").html($("#seniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-primary\">Life</span>" + seniorPrompts[Math.floor(seniorPrompts.length * Math.random())] + "</div>    </div>");
 
 	if(takeAgainACT(computeUserACT(user[9], user[10], user[11], user[12]), highestACTFromcCollege(user[26]))){
 		var randCollege = user[26][Math.floor(Math.random() * user[26].length)];
