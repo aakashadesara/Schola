@@ -11,6 +11,7 @@
   <SCRIPT TYPE="text/javascript" src="js/TweenLite.min.js"></SCRIPT>
 
   <script type="text/javascript" src="js/data.js"></script>
+  <script type="text/javascript" src="js/prompts.js"></script>
 
   <script type="text/javascript" src="js/script.js"></script>
 </head>
@@ -46,7 +47,7 @@ div {
     transition: all 1s ease;
 }
 .timeline .timeline-item .year {
-    font-size: 15px;
+    font-size: 20px;
     font-weight: bold;
     width: 35%;
 }
@@ -81,7 +82,7 @@ div {
     color: #c83d34;
 }
 .timeline .timeline-item .marker .dot {
-    background-color: white;
+    background-color: red;
     -webkit-transition: all 1s ease;
     -moz-transition: all 1s ease;
     transition: all 1s ease;
@@ -169,7 +170,11 @@ div {
     <div class="form-group">
       <label class="col-lg-3 control-label">Interested major</label>
       <div class="col-lg-6">
-        <input type="text" class="form-control" id="majorHolder" placeholder="Interested major">
+        <div class="form-group">
+        <select class="form-control" id="majorHolder">
+          
+        </select>
+      </div>
       </div>
     </div>
     
@@ -290,65 +295,40 @@ div {
      <div id="informationDiv" style="background-color: background-color: rgba(255,255,255,0.5); max-height: 100%; overflow-y: scroll;">
       
 <div class="timeline" style="margin-left: 500px; margin-right:auto;">
-<h1>Your High School Timeline<h1>
+<h1><span id="getNameHolder"></span>'s High School Timeline<h1>
     <div class="timeline-item ">
-        <div class="year">Freshmanak kdasd askdjkals<span class="marker"><span class="dot"></span></span>
+        <div class="year">Freshman<span class="marker"><span class="dot"></span></span>
         </div>
-        <div class="info"><span class="badge" style="color:blue"></span>That song the artist formerly known as prince sang no longer applies.</div>
+         <div class="info"><span class="label label-success">General</span>A little fish spawning inside the lagoon of opportunity.</div>
+       
     </div>
-    <div class="timeline-item">
+
+    <div id="freshmanLine"></div>
+
+     <div class="timeline-item ">
         <div class="year">Sophomore<span class="marker"><span class="dot"></span></span>
         </div>
-        <div class="info"><span class="badge" style="color:#00B8E6"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason: Rob Ford takes a good goddamn photo.</div>
+        <div class="info"><span class="label label-success">General</span>Experiences shape the lombany of wisdom.</div>
     </div>
-    <div class="timeline-item">
+
+    <div id="sophomoreLine"></div>
+
+    <div class="timeline-item ">
         <div class="year">Junior<span class="marker"><span class="dot"></span></span>
         </div>
-        <div class="info"><span class="badge" style="color:#B80000"></span>That song the artist formerly known as prince sang no longer applies.</div>
+        <div class="info"><span class="label label-success">General</span>Stress becomes your second name, often your first too.</div>
     </div>
-    <div class="timeline-item">
+
+    <div id="juniorLine"></div>
+
+    <div class="timeline-item ">
         <div class="year">Senior<span class="marker"><span class="dot"></span></span>
         </div>
-        <div class="info"><span class="badge" style="color:#E66916"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
+        <div class="info"><span class="label label-success">General</span>Senioritis isn't real. It's a myth.</div>
     </div>
-    <div class="timeline-item">
-        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#FFDB4D"></span>That song the artist formerly known as prince sang no longer applies.</div>
-    </div>
-    <div class="timeline-item">
-        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#f56773 "></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
-    </div> <div class="timeline-item">
-        <div class="year">Senior<span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#E66916"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
-    </div>
-    <div class="timeline-item">
-        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#FFDB4D"></span>That song the artist formerly known as prince sang no longer applies.</div>
-    </div>
-    <div class="timeline-item">
-        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#f56773 "></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
-    </div> <div class="timeline-item">
-        <div class="year">Senior<span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#E66916"></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
-    </div>
-    <div class="timeline-item">
-        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#FFDB4D"></span>That song the artist formerly known as prince sang no longer applies.</div>
-    </div>
-    <div class="timeline-item">
-        <div class="year">2008 <span class="marker"><span class="dot"></span></span>
-        </div>
-        <div class="info"><span class="badge" style="color:#f56773 "></span>The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.The in-house Gawker chat room is filled with photos of Rob Ford, and for one reason.</div>
-    </div>
+
+    <div id="seniorLine"></div>
+    
 </div>
 
      </div>
@@ -554,11 +534,11 @@ div {
     font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-    font-size: 120%;
+    font-size: 150%;
   }
 
   .ui-menu-item:hover {
-    background-color: red;
+    background-color: white;
   }
   /* IE 6 doesn't support max-height
    * we use height instead, but this forces the menu to always be this tall
