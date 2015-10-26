@@ -1,0 +1,979 @@
+<!Doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+    <title>Pioneer Hacks</title>
+    <meta name="description" content="PSD to HTML5+CSS3 conversion.">
+    <meta name="keywords" content="PSD, HTML5, CSS3">
+
+    <link rel="shortcut icon" href="assets/img/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.jpg">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/img/apple-touch-icon-72x72.jpg">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/img/apple-touch-icon-114x114.jpg">
+
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,700' rel='stylesheet' type='text/css'>
+    
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/animate.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/font-lineicons.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/jquery.fancybox.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/style.css" id="mainstyle" type="text/css" media="all" />
+    <link rel="stylesheet" href="assets/css/color-chooser.css" type="text/css" media="all" />
+
+
+
+    <script type="text/javascript" src="EasePack.min.js"></script>
+  <script type="text/javascript" src="TweenLite.min.js"></script>
+    
+    <!--[if lt IE 9]>
+        <script src="assets/js/html5.js"></script>
+        <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body id="index">	
+    <!-- Preloader -->
+    <div id="mask">
+        <div id="loader"><img src="assets/img/preloader.gif" alt="preloader" /></div>
+    </div>
+    <header id="mobileheader" class="navigation-bar-header light visible-xs"></header>
+    <!-- Hero Section -->
+
+
+    <section id="hero" class="light">
+      <!--<div id="beast" style="height: 100%; width: 100%; background-color: ; position: absolute;"></div>-->
+      <div id="large-header" style="height: 100%; width: 100%; position: fixed">
+        <canvas id="demo-canvas" style="height: 100%; width: 100%; background-color: rgba(255,255,255,0.3); position: absolute;"></canvas>
+      </div>
+    
+      <div class="container">
+
+        <div class="home-bg">
+          <!-- <nav class="navigation navigation-social">
+            <ul class="navigation-bar">
+              <li><a href="#"><span class="fa fa-twitter"></span></a>
+              <li><a href="#"><span class="fa fa-facebook"></span></a>
+              <li><a href="#"><span class="fa fa-github"></span></a>
+              <li><a href="#"><span class="fa fa-vimeo-square"></span></a>
+              <li><a href="#"><span class="fa fa-linkedin"></span></a>
+              <li><a href="#"><span class="fa fa-instagram"></span></a>
+            </ul>
+          </nav> -->
+          <div class="hero-content text-center " style="color: black;">
+            <div class="hero-small">
+               <hr /><span><span class="fa fa-calendar"></span>October 10, 8am - 10pm <div class="sep"></div> <span class="fa fa-map-marker"></span>Cupertino, CA</span> <hr />
+            </div>
+            <div class="hero-big">Pioneer Hacks</div>
+            <div class="hero-normal">Today’s youth hacking tomorrow’s <strong>future.</strong> <br>A 12 hour Hackathon for High School Students</div>
+            <a href="https://kvedula.typeform.com/to/EyTxLg" target="blank" class="btn btn-lg btn-3d"><i class="fa fa-play-circle fa-2x"></i> <span>Sign Up</span></a>
+
+			<a href="#about" class="btn btn-sm btn-default" style="color: black;">Read More</a>
+          </div>          
+        </div>
+      </div>
+    </section> 
+    <!-- End Hero Section -->
+    <!-- Header -->
+    <header id="header" class="navigation-bar-header light hidden-xs">
+      <div class="container">
+        <nav class="navigation">
+          <div class="navigation-txt visible-xs" data-toggle="dropdown">Home</div>
+          <button class="navigation-toggle visible-xs" type="button" data-toggle="dropdown">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <ul class="navigation-bar navigation-bar-left">
+            <li><a href="#about">About</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+<!--             <li><a href="#speakers">Speakers</a></li>--> 
+            <li><a href="#sponsors">Sponsors</a></li>
+            <li><a href="#organizers">Organizers</a></li>
+            <li><a href="#map">Contact Us</a></li>
+            <li class="featured"><a href="sponsor.jpg" target="blank"><i class="fa fa-ticket fa-1x"></i>Sponsor Info</a></li>
+          </ul>
+        </nav>
+      </div>      
+    </header>
+    <!-- End Header -->
+    <!-- About Section -->
+    <section id="about" class="section dark">
+      <div class="container">
+	    <div class="icon-wrap"><span class="icon icon-active icon-multimedia-12"></span></div>
+        <h3>Let your creativity take you places!</h3>
+        <div class="sub-title">Create awesome products in less than <span class="highlight">12 hours</span></div>
+        <br />
+        <br />
+        <section class="nav-tabs-simple">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="#htmlcss" data-toggle="tab"><i class="icon icon-chat-messages-01"></i> Learn</a></li>
+            <li><a href="#jquery" data-toggle="tab"><i class="icon icon-education-science-11"></i> Workshops</a></li>
+            <li><a href="#php" data-toggle="tab"><i class="icon icon-documents-bookmarks-12"></i> About us</a></li>
+          </ul>
+          
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="htmlcss">
+              <article class="row">
+                <div class="col-md-5 col-sm-5 animated hiding" data-animation="fadeInLeft" data-delay="500">
+                  <img class="img-responsive" src="assets/img/about-placeholder-starbucks.jpg" alt="starbuck" />
+                </div>
+                <div class="col-md-6 col-sm-6 text-left animated hiding" data-animation="fadeInRight" data-delay="500">
+                  <h6>What you will learn</h6>
+					<p>In our Hackathon teams have full freedom to <strong>hack</strong> whatever they want! If it’s a global issue, we want you to solve it! We want our High Schoolers to have complete freedom to explore their interests.</p>
+					<ul class="sub-list">
+						<li><i class="icon icon-documents-bookmarks-16"></i> Mobile Apps</li>
+						<li><i class="icon icon-documents-bookmarks-11"></i> Web Apps</li>
+						<li><i class="icon icon-documents-bookmarks-10"></i> Hardware</li>
+					</ul>
+				</div>
+              </article>
+            </div>
+            <div class="tab-pane fade" id="jquery">
+              <article class="row">
+				<div class="col-md-6 col-sm-6 text-left animated hiding" data-animation="fadeInLeft" data-delay="500">
+                  <h6>What we will do</h6>
+					<p>Throughout the event we’ll hold <strong>workshops</strong> run by experts in the field, for anyone interested to attend. We will hold workshops in the following fields:</p>
+					<ul class="sub-list">
+						<li><i class="icon icon-documents-bookmarks-16"></i> Wearable Technology</li>
+						<li><i class="icon icon-documents-bookmarks-10"></i> iOS Programming </li>
+            <li><i class="icon icon-documents-bookmarks-11"></i> Android Development </li>
+            <li><i class="icon icon-documents-bookmarks-16"></i> Web Development </li>
+					</ul>
+				</div>
+				<div class="col-md-5 col-sm-5 animated hiding" data-animation="fadeInRight" data-delay="500">
+                  <img class="img-responsive" src="assets/img/about-placeholder-mbp.jpg" alt="placeholder" />
+                </div>
+              </article>
+            </div>
+            <div class="tab-pane fade" id="php">
+              <article class="row">
+                <div class="col-md-5 col-sm-5 animated hiding" data-animation="fadeInLeft" data-delay="500">
+                  <img class="img-responsive" src="assets/img/about-placeholder-iphone.jpg" alt="iphone" />
+                </div>
+                <div class="col-md-6 col-sm-6 text-left animated hiding" data-animation="fadeInRight" data-delay="500">
+                  <h6>About Pioneer Hacks:</h6>
+                 <p>We have a great passion for <strong>entrepreneurship</strong>, and for showcasing talent among youth. We believe that there are brilliant High Schoolers that are ready to tackle the hardest challenges, and we want to expose their talent in our event.</p>
+                </div>
+              </article></div>
+          </div>
+        </section>
+      </div>
+    </section>
+    <!-- End About Section -->
+    <!-- Stat Section -->
+    <section id="stat" class="section light">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="counter animated hiding" data-animation="fadeInDown" data-delay="0">
+              <div class="stat"><span class="value" data-from="0" data-to="12">12</span>+</div>
+              <div class="stat-info">hours</div>
+              <hr />
+              <p class="small">Just the right amount of time to produce awesome things, while keeping everyone mentally sane.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="counter animated hiding" data-animation="fadeInDown" data-delay="500">
+              <div class="stat"><span class="value" data-from="0" data-to="5">5</span></div>
+              <div class="stat-info">speakers</div>
+              <hr />
+              <p class="small">The most inspiring line-up of speakers brought from around the world.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="counter animated hiding" data-animation="fadeInDown" data-delay="1000">
+              <div class="stat"><span class="value" data-from="0" data-to="100">100</span>+</div>
+              <div class="stat-info">hackers</div>
+              <hr />
+              <p class="small">Forming teams that will compete for awesome prizes.</p>
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="counter animated hiding" data-animation="fadeInDown" data-delay="1500">
+              <div class="stat"><span class="value" data-from="0" data-to="40">40</span>+</div>
+              <div class="stat-info">hacks</div>
+              <hr />
+              <p class="small"> This event is bringing the best people, to the best place for hackers</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Stat Section -->
+
+
+    <!-- Schedule Section -->
+
+    
+    <!--
+    <section id="schedule" class="section dark">
+      <div class="container">
+        <div class="icon-wrap"><span class="icon icon-active icon-text-hierarchy-07"></span></div>
+        <h3>Full schedule</h3>
+        <div class="sub-title">Check out how our teams will go from idea generation to fully-functioning products, in 12 hours!</div>
+        <br />
+        <br />
+        <section class="nav-tabs-default hidden-xs">
+
+        -->
+          <!-- Parent Nav Tabs --> <!--
+          <ul class="nav nav-tabs">
+            <li class="active"><a href="#DayOne" data-toggle="tab">
+              <div class="title">Day 1</div>
+              <div class="subtitle">10/10/2015</div>
+            </a></li>
+    -->
+         <!--    <li><a href="#DayThree" data-toggle="tab">
+              <div class="title">Day 3</div>
+              <div class="subtitle">10/10/2013</div>
+            </a></li> --> <!--
+          </ul>
+          -->
+          <!-- Parent Tab panes --> <!--
+          <div class="tab-content">
+            <div class="tab-pane fade in active" id="DayOne">
+                -->
+                <!-- Child 1 Nav Tabs --> <!--
+  
+              
+                <div class="tab-content">
+                  <div class="tab-pane fade in active" id="DayOne-1">
+                    <div class="panel-group timeline-schedule" id="panelTimelineOne">
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 10:00 AM</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemOne">
+                              Check-in begins for participants
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+                        <div id="itemOne" class="panel-collapse collapse in">
+                          <div class="panel-body">
+                            <article>
+                              <p>Sponsor booths will be set up, where participants can get information about their products, APIs and other offerings. They will of course come to collect some swag.</p>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 11:00 !M</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemTwo" class="collapsed">
+                              Lunch is served!
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+                        <div id="itemTwo" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <article>
+                              <p>Grab some food, and mingle with fellow hackers</p>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 12:30 PM</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemThree" class="collapsed">
+                              Opening ceremony and introductory remarks
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+                        <div id="itemThree" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <article>
+                              <p>We will have two keynote speakers as well as presentations from some of our sponsors, on how to use their APIs and products.</p>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 13:00 PM</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemFour" class="collapsed">
+                              Idea pitches and forming teams
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+                        <div id="itemFour" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <article>
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+                              <p class="author"><a href="#"><strong><i class="fa fa-user"></i> John Doeson</strong></a></p>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 13:30 PM</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemFive" class="collapsed">
+                              Hacking Begins!
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+                        <div id="itemFive" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <article>
+                              <p>Teams will begin working on their products, by the aid of mentors from our sponsors. </p>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 18:00 PM</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemSix" class="collapsed">
+                              Dinner is served! 
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+              
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 20:00 PM</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemSeven" class="collapsed">
+                              Workshop Session 1 
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+                        <div id="itemSeven" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <article>
+                              <p>Two workshops will happen simultaneously to allow participants to explore new passions! Distinguished sponsors can request to hold a workshop for usage of their product/API.</p>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="panel panel-default">
+                        <div class="speaker-wrapper">
+                          <img src="assets/img/speaker/orange.jpg" class="img-responsive img-circle" alt="speaker-1" />
+                        </div>
+                        <div class="panel-heading">
+                          <div class="panel-title">
+                            <div class="time"><i class="fa fa-clock-o"></i> 00:00 PM</div>
+                            <a data-toggle="collapse" data-parent="#panelTimelineOne" href="#itemEight" class="collapsed">
+                              Midnight snacks and energy drinks! 
+                              <div class="pull-right fa fa-angle-up"></div>
+                              <div class="pull-right fa fa-angle-down"></div>
+                            </a>
+                          </div>
+                        </div>
+                        <div id="itemEight" class="panel-collapse collapse">
+                          <div class="panel-body">
+                            <article>
+                              <p>Two workshops will happen simultaneously to allow participants to explore new passions! Distinguished sponsors can request to hold a workshop for usage of their product/API.</p>
+                            </article>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                  <div class="tab-pane fade" id="DayOne-2">
+                    <article>
+                      <p>No schedule yet.</p>
+                    </article>
+                  </div>
+                  <div class="tab-pane fade" id="DayOne-3">
+                    <article>
+                      <p>No schedule yet.</p>
+                    </article>
+                  </div>
+                  <div class="tab-pane fade" id="DayOne-4">
+                    <article>
+                      <p>No schedule yet.</p>
+                    </article>
+                  </div>
+                </div>
+                <div class="clearfix"></div>
+                
+            </div>
+          </div> 
+        </section>
+        
+        
+      </div>
+    </section> -->
+  
+    <!-- End Schedule Section -->
+
+
+
+
+    <!-- Speakers Section -->
+    <section id="speakers" class="section light">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="icon-wrap"><span class="icon icon-active icon-multimedia-12"></span></div>
+        <h3>Speakers and Judges</h3>
+        <div class="sub-title">We are excited to surprise you with our amazing list of speakers and judges!</div>
+        <br />
+        <br />
+        <section class="row">
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="0">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="500">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+           </div>
+          </div>
+          <div class="clearfix visible-xs"></div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="1000">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+          </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="1500">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+            </div>
+          </div>
+        </section> 
+
+        <section class="row">
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="0">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="500">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+           </div>
+          </div>
+          <div class="clearfix visible-xs"></div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="1000">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+          </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="1500">
+              <div class="img-wrapper">
+                <img src="assets/img/speaker/speaker-1.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">TBD</div>
+              <div class="sub">CEO Hack</div> 
+              <p class="small">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+              <div class="social-link">
+                <a href="#"><span class="fa fa-facebook"></span></a>
+                <a href="#"><span class="fa fa-twitter"></span></a>
+                <a href="#"><span class="fa fa-linkedin"></span></a>
+              </div> 
+            </div>
+          </div>
+        </section> 
+      </div>
+    </section> 
+    <!-- End Speakers Section -->
+
+
+
+
+
+    <!-- Sponsors Section -->
+    <section id="sponsors" class="section dark">
+      <div class="container">
+        <div class="icon-wrap"><span class="icon icon-active icon-documents-bookmarks-12"></span></div>
+        <h3>Sponsors</h3>
+
+        <br/>
+         <div class="row">
+          <ul class="list-inline">
+          <!-- TINOVATION -->
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/poweredby.png" alt="sponsor-10" /></a></li>
+          </ul>
+
+        <!-- MLH -->
+        <br/>
+         <div class="row">
+          <ul class="list-inline">
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/mlh.png" alt="sponsor-10" /></a></li>
+          </ul>
+    
+     <div class="btn-wrapper">
+
+        <div class="sub-title">We will update the list of sponsors as we aquire more!<br><br> Our sponsors get the same benefit as in any Hackathon, and more! Contribute to our event in a wide variety of ways, from financial assistance to mentors to awesome swag. We want our sponsors to have a strong presence at our event, which means: setting up tables, teaching our brilliant High Schoolers how to use their APIs, promoting their product in the opening ceremony and workshops, and much more! We’d love to hear from you on how we can collaborate! <br><br></div>
+
+        <div class="sub-title">Here are our sponsors from last year who we hope to see again this year.</div>
+
+		<br/>
+         <div class="row">
+          <ul class="list-inline">
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/1sb.png" alt="sponsor-1" /></a></li> 
+
+            <li><a href="http://about.me/" target="_blank"><img src="assets/img/sponsor/a16z.png" alt="sponsor-2" /></a></li> 
+
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/boosted.png" alt="sponsor-3" /></a></li> 
+
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/github.png" alt="sponsor-4" /></a></li> 
+
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/mgwu.png" alt="sponsor-5" /></a></li> 
+
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/nc.png" alt="sponsor-6" /></a></li> 
+
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/sendgrid.png" alt="sponsor-8" /></a></li> 
+
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/tessel.png" alt="sponsor-9" /></a></li> 
+
+            <li><a href="#" target="_blank"><img src="assets/img/sponsor/verAxis.png" alt="sponsor-10" /></a></li> 
+          </ul>
+		
+		 <div class="btn-wrapper">
+			<a href="mailto:pioneerhacks@gmail.com" class="btn btn-sm btn-primary">Become a sponsor</a>
+		 </div>
+		</div> 
+      </div>
+    </section>
+    <!-- End Sponsor Section -->
+
+
+
+
+    <!-- Organizers Section -->
+    <div id = "organizers">
+    <section id="speakers" class="section light">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="icon-wrap"><span class="icon icon-active icon-multimedia-12"></span></div>
+        <h3>Organizers</h3>
+        <div class="sub-title">Us four have worked really hard to make this event possible. Hope you enjoy it!</div>
+        <br />
+        <br />
+        <section class="row">
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="0">
+              <div class="img-wrapper">
+                <img src="assets/img/organizers/kamesh.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">Kamesh Vedula</div>
+              <div class="sub">Organizer</div> 
+            
+              <div class="social-link">
+                <a href="http://facebook.com/Kashiscool16"><span class="fa fa-facebook"></span></a>
+                <a href="http://twitter.com/iTeenageCoder"><span class="fa fa-twitter"></span></a>
+              </div> 
+              
+            </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="500">
+              <div class="img-wrapper">
+                <img src="assets/img/organizers/aakash.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">Aakash Adesara</div>
+              <div class="sub">Organizer</div> 
+              
+              <div class="social-link">
+                <a href="http://facebook.com/aakashadesara"><span class="fa fa-facebook"></span></a>
+                <a href="http://twitter.com/aakashadesara"><span class="fa fa-twitter"></span></a>
+      
+              </div> 
+           </div>
+          </div>
+          <div class="clearfix visible-xs"></div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="1000">
+              <div class="img-wrapper">
+                <img src="assets/img/organizers/anant.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">Anant Jain</div>
+              <div class="sub">Organizer</div> 
+              
+              <div class="social-link">
+                <a href="http://facebook.com/anantjain98"><span class="fa fa-facebook"></span></a>
+                <a href="http://twitter.com/anantjain"><span class="fa fa-twitter"></span></a>
+              
+              </div> 
+          </div>
+          </div>
+          <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="speaker-item animated hiding" data-animation="fadeInUp" data-delay="1500">
+              <div class="img-wrapper">
+                <img src="assets/img/organizers/youssef.jpg" class="img-responsive img-circle" alt="speaker-1" />
+              </div>
+              <div class="name">Youssef Sibih</div>
+              <div class="sub">Organizer</div> 
+             <div class="social-link">
+                <a href="http://facebook.com/ysibih"><span class="fa fa-facebook"></span></a>
+                <a href="http://twitter.com/ysibih"><span class="fa fa-twitter"></span></a>
+              
+              </div> 
+            </div>
+          </div>
+        </section> 
+
+      </div>
+    </section> 
+    </div>
+    <!-- End Speakers Section -->
+
+
+
+
+    <!-- Map Section -->
+    <section id="map" class="dark">
+		<div id="canvas-map"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-5 col-sm-7 animated hiding location" data-animation="fadeInLeft" data-delay="0">
+					<h3>Location</h3>
+						<ul itemscope="" itemtype="http://schema.org/PostalAddress">
+							<li itemprop="address"><i class="fa fa-map-marker highlight"></i>10100 Finch Avenue Cupertino, CA 95014</li>
+							<li itemprop="email"><i class="fa fa-envelope highlight"></i>pioneerhacks@gmail.com</li>
+							<!--<li itemprop="telephone"><i class="fa fa-phone highlight"></i>(408) 601-8765</li>-->
+						<li itemscope="" itemtype="http://schema.org/Event"><i class="fa fa-clock-o highlight"></i><time itemprop="startDate" datetime="2015-01-24T10:00">8:00 AM</time> - <time itemprop="endDate" datetime="2015-01-25T21:30">10:00 PM</time></li> 
+						</ul>
+				</div>
+			</div>
+		</div>
+    </section>
+    <!-- End Map Section -->
+    <footer id="footer">
+
+    </footer>
+    
+    <div class="back-to-top"><i class="fa fa-angle-up fa-3x"></i></div>
+
+
+<script type="text/javascript">
+(function() {
+
+    var width, height, largeHeader, canvas, ctx, points, target, animateHeader = true;
+
+    // Main
+    initHeader();
+    initAnimation();
+    addListeners();
+
+    function initHeader() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        target = {x: width/2, y: height/2};
+
+        largeHeader = document.getElementById('large-header');
+        largeHeader.style.height = height+'px';
+
+        canvas = document.getElementById('demo-canvas');
+        canvas.width = width;
+        canvas.height = height;
+        ctx = canvas.getContext('2d');
+
+        // create points
+        points = [];
+        for(var x = 0; x < width; x = x + width/20) {
+            for(var y = 0; y < height; y = y + height/20) {
+                var px = x + Math.random()*width/20;
+                var py = y + Math.random()*height/20;
+                var p = {x: px, originX: px, y: py, originY: py };
+                points.push(p);
+            }
+        }
+
+        // for each point find the 5 closest points
+        for(var i = 0; i < points.length; i++) {
+            var closest = [];
+            var p1 = points[i];
+            for(var j = 0; j < points.length; j++) {
+                var p2 = points[j]
+                if(!(p1 == p2)) {
+                    var placed = false;
+                    for(var k = 0; k < 5; k++) {
+                        if(!placed) {
+                            if(closest[k] == undefined) {
+                                closest[k] = p2;
+                                placed = true;
+                            }
+                        }
+                    }
+
+                    for(var k = 0; k < 5; k++) {
+                        if(!placed) {
+                            if(getDistance(p1, p2) < getDistance(p1, closest[k])) {
+                                closest[k] = p2;
+                                placed = true;
+                            }
+                        }
+                    }
+                }
+            }
+            p1.closest = closest;
+        }
+
+        // assign a circle to each point
+        for(var i in points) {
+            var c = new Circle(points[i], 2+Math.random()*2, 'rgba(0,0,0,0.5)');
+            points[i].circle = c;
+        }
+    }
+
+    // Event handling
+    function addListeners() {
+        if(!('ontouchstart' in window)) {
+            window.addEventListener('mousemove', mouseMove);
+        }
+        window.addEventListener('scroll', scrollCheck);
+        window.addEventListener('resize', resize);
+    }
+
+    function mouseMove(e) {
+        var posx = posy = 0;
+        if (e.pageX || e.pageY) {
+            posx = e.pageX;
+            posy = e.pageY;
+        }
+        else if (e.clientX || e.clientY)    {
+            posx = e.clientX + document.body.scrollLeft + document.documentElement.scrollLeft;
+            posy = e.clientY + document.body.scrollTop + document.documentElement.scrollTop;
+        }
+        target.x = posx;
+        target.y = posy;
+    }
+
+    function scrollCheck() {
+        if(document.body.scrollTop > height) animateHeader = false;
+        else animateHeader = true;
+    }
+
+    function resize() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+        largeHeader.style.height = height+'px';
+        canvas.width = width;
+        canvas.height = height;
+    }
+
+    // animation
+    function initAnimation() {
+        animate();
+        for(var i in points) {
+            shiftPoint(points[i]);
+        }
+    }
+
+    function animate() {
+        if(animateHeader) {
+            ctx.clearRect(0,0,width,height);
+            for(var i in points) {
+                // detect points in range
+                if(Math.abs(getDistance(target, points[i])) < 12000) {
+                    points[i].active = 0.3;
+                    points[i].circle.active = 0.6;
+                } else if(Math.abs(getDistance(target, points[i])) < 80000) {
+                    points[i].active = 0.1;
+                    points[i].circle.active = 0.3;
+                } else if(Math.abs(getDistance(target, points[i])) < 100000) {
+                    points[i].active = 0.02;
+                    points[i].circle.active = 0.1;
+                } else {
+                    points[i].active = 0;
+                    points[i].circle.active = 0;
+                }
+
+                drawLines(points[i]);
+                points[i].circle.draw();
+            }
+        }
+        requestAnimationFrame(animate);
+    }
+
+    function shiftPoint(p) {
+        TweenLite.to(p, 1+1*Math.random(), {x:p.originX-50+Math.random()*100,
+            y: p.originY-50+Math.random()*100, ease:Circ.easeInOut,
+            onComplete: function() {
+                shiftPoint(p);
+            }});
+    }
+
+    // Canvas manipulation
+    function drawLines(p) {
+        if(!p.active) return;
+        for(var i in p.closest) {
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p.closest[i].x, p.closest[i].y);
+            ctx.strokeStyle = 'rgba(230,50,50,'+ p.active+')';
+            ctx.stroke();
+        }
+    }
+
+    function Circle(pos,rad,color) {
+        var _this = this;
+
+        // constructor
+        (function() {
+            _this.pos = pos || null;
+            _this.radius = rad || null;
+            _this.color = color || null;
+        })();
+
+        this.draw = function() {
+            if(!_this.active) return;
+            ctx.beginPath();
+            ctx.arc(_this.pos.x, _this.pos.y, _this.radius, 0, 2 * Math.PI, false);
+            ctx.fillStyle = 'rgba(199,33,33,'+ _this.active+')';
+            ctx.fill();
+        };
+    }
+
+    // Util
+    function getDistance(p1, p2) {
+        return Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2);
+    }
+    
+})();</script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+   <script src="Three.js"></script>
+
+
+    <!--[if lt IE 9]>
+        <script type="text/javascript" src="assets/js/jquery-1.11.0.min.js?ver=1"></script>
+    <![endif]-->  
+    <!--[if (gte IE 9) | (!IE)]><!-->  
+        <script type="text/javascript" src="assets/js/jquery-2.1.0.min.js?ver=1"></script>
+    <!--<![endif]-->  
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+    <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.nav.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.appear.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.countTo.js"></script>
+    <script type="text/javascript" src="assets/js/waypoints.min.js"></script>
+    <script type="text/javascript" src="assets/js/waypoints-sticky.min.js"></script>
+    <script type="text/javascript" src="assets/js/jquery.fancybox.js"></script>
+	<script type="text/javascript" src="assets/mailchimp/js/mailing-list.js"></script>
+    <script type="text/javascript" src="assets/js/scripts.js"></script>
+    <script type="text/javascript" src="assets/js/color-chooser.js"></script>
+
+
+
+</body>
+
+
+</html>
+<!-- Localized -->
