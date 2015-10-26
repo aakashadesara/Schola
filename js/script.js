@@ -406,7 +406,7 @@ function makeJunior(){
 	if(takeAgainSAT(computeUserACT(user[9], user[10], user[11], user[12]), highestSATFromcCollege(user[26]))){
 		var randCollege = user[26][Math.floor(Math.random() * user[26].length)];
 		var randInt1 = Math.floor(Math.random() * SATprompts.length);
-		var randDate = "November 1st";
+		var randDate = testDates[Math.floor(testDates.length * Math.random())];
 		var str2 = SATprompts[randInt1][0] + randCollege + SATprompts[randInt1][1] + randDate + SATprompts[randInt1][2] + highestSATFromcCollege(user[26]);
 
 		$("#juniorLine").html($("#juniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-info\">Testing</span>" + str2 + "</div>    </div>");
@@ -418,7 +418,7 @@ function makeJunior(){
 	if(takeAgainACT(computeUserACT(user[9], user[10], user[11], user[12]), highestACTFromcCollege(user[26]))){
 		var randCollege = user[26][Math.floor(Math.random() * user[26].length)];
 		var randInt1 = Math.floor(Math.random() * ACTprompts.length);
-		var randDate = "November 1st";
+		var randDate = testDates[Math.floor(testDates.length * Math.random())];
 		var str2 = ACTprompts[randInt1][0] + randCollege + ACTprompts[randInt1][1] + randDate + ACTprompts[randInt1][2] + highestACTFromcCollege(user[26]);
 
 		$("#juniorLine").html($("#juniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-info\">Testing</span>" + str2 + "</div>    </div>");
@@ -437,6 +437,8 @@ function makeSenior(){
 
 	$("#seniorLine").html($("#seniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-success\">General</span>Next up on the list is college but too bad you gotta cook it up yourself. Start working on college applications (aka, signup for your CommonApp, UC App, UT App, etc etc) and start filling out those surveys. They take some time but they are about you so you'll be fine!</div>    </div>");
 
+		$("#seniorLine").html($("#seniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-info\">Testing</span>" + subjectTestRec(user[4]) + "</div>    </div>");
+
 
 	var nameOfHighestCollege = highestGPAFromCollegesName(user[26]);
 	var highestGPA = highestGPAFromColleges(user[26]);
@@ -450,7 +452,7 @@ function makeSenior(){
 	if(takeAgainSAT(computeUserACT(user[9], user[10], user[11], user[12]), highestSATFromcCollege(user[26]))){
 		var randCollege = user[26][Math.floor(Math.random() * user[26].length-1)];
 		var randInt1 = Math.floor(Math.random() * SATprompts.length);
-		var randDate = "November 1st";
+		var randDate = testDates[Math.floor(testDates.length * Math.random())];
 		var str2 = SATprompts[0][0] + randCollege + SATprompts[0][1] + randDate + SATprompts[0][2] + highestSATFromcCollege(user[26]);
 
 		$("#seniorLine").html($("#seniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-info\">Testing</span>" + str2 + "</div>    </div>");
@@ -461,7 +463,7 @@ function makeSenior(){
 	if(takeAgainACT(computeUserACT(user[9], user[10], user[11], user[12]), highestACTFromcCollege(user[26]))){
 		var randCollege = user[26][Math.floor(Math.random() * user[26].length)];
 		var randInt1 = Math.floor(Math.random() * ACTprompts.length);
-		var randDate = "November 1st";
+		var randDate = testDates[Math.floor(testDates.length * Math.random())];
 		var str2 = ACTprompts[randInt1][0] + randCollege + ACTprompts[randInt1][1] + randDate + ACTprompts[randInt1][2] + highestACTFromcCollege(user[26]);
 
 		$("#seniorLine").html($("#seniorLine").html() + " <div class=\"timeline-item \">        <div class=\"year\"><span class=\"marker\"><span class=\"dot\"></span></span>        </div>        <div class=\"info\"><span class=\"label label-info\">Testing</span>" + str2 + "</div>    </div>");
@@ -474,6 +476,32 @@ function makeSenior(){
 
 }
 
+function subjectTestRec(str){
+	var sTestArr = [];
+
+	var strpart = "";
+
+	for(var i = 0; i < majorNames.length; i++){
+		if(str === majorList[i][0]){			
+			for(var j = 0; j < subjectTestMajor[i].length; j++){
+				if(j == subjectTestMajor[i].length - 1){
+					strpart += "and "
+				}
+				strpart += subjectTestMajor[i][j]+ " ";
+			}
+		}
+	}
+
+
+	var r = Math.floor(Math.random() * subjectTestPrompts.length);
+
+	var str = "";
+
+	str += subjectTestPrompts[r][0] + strpart + subjectTestPrompts[r][1];
+
+	return str;
+
+}
 
 
 function extraCurricularCalculator(str){

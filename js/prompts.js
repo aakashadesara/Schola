@@ -46,3 +46,9 @@ var juniorPrompts = [["You have probably heard some terrible things about this y
 
 var seniorPrompts = [["Oy, senioritis isn't a disease, it's a choice. CHOOSE to do get it second semester. In the mean time, go ask the girl or guy to senior prom and have a blash! You're almost done! (Plus, make sure your grades are good still. Colleges look at those.) "],
 					 ["Helloooo senior. Maintain your grades, spend time with friends, do your college apps. It's a good time to be alive!"]];
+
+var subjectTestPrompts = [["The ", " SAT Subject Tests apply to your major so consider taking them."],
+						 ["Consider taking the ", " Subject Tests as they apply to your major of choice."],
+						 ["", " are subject tests that are relevant to you so consider taking them."]];
+
+var testDates = ["August 27th", "February 2nd", "April 29th", "June 2nd", "December 11th", "October 19th"];
